@@ -518,10 +518,10 @@ export default function App() {
   const progressPercentage = ((activeIndex + 1) / SECTIONS.length) * 100;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans flex flex-col md:flex-row">
+    <div className="h-screen w-full overflow-hidden bg-slate-950 text-slate-200 font-sans flex flex-col md:flex-row">
       
       {/* Bouton Menu Mobile */}
-      <div className="md:hidden bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center sticky top-0 z-50">
+      <div className="shrink-0 md:hidden bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center z-50">
         <div className="flex items-center gap-2 font-bold text-emerald-500">
           <FaLinux size={24} />
           <span>Linux Guide</span>
@@ -533,7 +533,7 @@ export default function App() {
 
       {/* Sidebar Navigation */}
       <aside className={`
-        fixed md:sticky top-0 left-0 z-40 h-screen w-72 bg-slate-900 border-r border-slate-800 
+        fixed md:relative top-0 left-0 z-40 h-full w-72 bg-slate-900 border-r border-slate-800 
         transition-transform duration-300 ease-in-out
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         flex flex-col
@@ -571,10 +571,10 @@ export default function App() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col min-h-screen overflow-hidden">
+      <main className="flex-1 flex flex-col h-full min-w-0 overflow-hidden relative">
         
         {/* Dynamic Variables Header */}
-        <div className="relative bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-30 p-4 md:px-8">
+        <div className="shrink-0 relative bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-30 p-4 md:px-8">
           <div className="max-w-4xl mx-auto flex flex-col xl:flex-row gap-4 items-start xl:items-center justify-between relative">
             
             {/* Titre et Info */}
